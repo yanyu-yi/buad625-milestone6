@@ -26,8 +26,8 @@ if urlinput != '':
     # Extract pic names in the folder
     file_list = os.listdir("./DownloadedFile")
     file_list.sort()
-# remove .jpg
-new_list = [s.replace(".jpg", "") for s in file_list]
+    # remove .jpg
+    new_list = [s.replace(".jpg", "") for s in file_list]
 else:
     st.text('Please enter url above and click the Submit button')
 
