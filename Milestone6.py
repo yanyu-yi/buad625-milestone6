@@ -23,6 +23,11 @@ if urlinput != '':
     # unzip contents into output folder -- this takes a while.. file is big
     with ZipFile(inputFile) as zipObj:
         zipObj.extractall(outputDir)
+    # Extract pic names in the folder
+    file_list = os.listdir("./DownloadedFile")
+    file_list.sort()
+# remove .jpg
+new_list = [s.replace(".jpg", "") for s in file_list]
 else:
     st.text('Please enter url above and click the Submit button')
 
@@ -40,11 +45,11 @@ else:
 # with ZipFile(inputFile) as zipObj:
 #     zipObj.extractall(outputDir)
 
-# Extract pic names in the folder
-file_list = os.listdir("./DownloadedFile")
-file_list.sort()
-# remove .jpg
-new_list = [s.replace(".jpg", "") for s in file_list]
+# # Extract pic names in the folder
+# file_list = os.listdir("./DownloadedFile")
+# file_list.sort()
+# # remove .jpg
+# new_list = [s.replace(".jpg", "") for s in file_list]
 
 # input csv
 # read the csv file (put 'r' before the path string to address any special characters in the path, such as '\'). Don't forget to put the file name at the end of the path + ".csv"
